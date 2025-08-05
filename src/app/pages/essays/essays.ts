@@ -14,8 +14,12 @@ export class Essays implements OnInit {
     private essaysService = inject(EssaysService);
 
     discussions$!: Observable<any>;
+    data: any;
 
     ngOnInit() {
-        this.discussions$ = this.essaysService.getDiscussions();
+        this.essaysService.getDiscussions().subscribe(data => {
+          console.log('Discussions data:', data);
+          this.data = data;
+        });
     }
 }
