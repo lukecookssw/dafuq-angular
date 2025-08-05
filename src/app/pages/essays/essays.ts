@@ -6,7 +6,6 @@ import { EssaysService } from '../../services/essays';
   imports: [],
   templateUrl: './essays.html',
   styleUrl: './essays.scss',
-  standalone: true,
 })
 export class Essays {
 

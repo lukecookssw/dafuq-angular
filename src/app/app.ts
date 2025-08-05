@@ -10,4 +10,5 @@ import { Nav } from './ui/nav/nav';
 })
 export class App {
   protected readonly title = signal('dafuq');
+
 }

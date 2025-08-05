@@ -4,8 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-bio',
   imports: [],
   templateUrl: './bio.html',
-  styleUrl: './bio.scss',
-  standalone: true,
+  styleUrl: './bio.scss'
 })
 export class Bio {
 
