@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { EssaysService } from '../../services/essays';
 
 @Component({
   selector: 'app-essays',
@@ -8,4 +9,7 @@ import { Component } from '@angular/core';
 })
 export class Essays {
 
+    private essaysService = inject(EssaysService);
+
+    discussions$ = this.essaysService.getDiscussions();
 }
