@@ -1,5 +1,5 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { EssaysService } from '../../services/essays.service';
+import { Discussion, EssaysService } from '../../services/essays.service';
 import { Observable } from 'rxjs';
 import { CommonModule } from '@angular/common';
 
@@ -12,14 +12,8 @@ import { CommonModule } from '@angular/common';
 export class Essays implements OnInit {
 
     private essaysService = inject(EssaysService);
-
-    discussions$!: Observable<any>;
-    data: any;
-
+    discussions$!: Observable<Discussion[]>;
     ngOnInit() {
-        this.essaysService.getDiscussions().subscribe(data => {
-          console.log('Discussions data:', data);
-          this.data = data;
-        });
+        this.discussions$ = this.essaysService.getDiscussions();
     }
 }
