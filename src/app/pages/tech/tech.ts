@@ -4,7 +4,8 @@ import { Component } from '@angular/core';
   selector: 'app-tech',
   imports: [],
   templateUrl: './tech.html',
-  styleUrl: './tech.scss'
+  styleUrl: './tech.scss',
+  standalone: true,
 })
 export class Tech {
 

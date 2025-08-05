@@ -5,7 +5,8 @@ import { EssaysService } from '../../services/essays';
   selector: 'app-essays',
   imports: [],
   templateUrl: './essays.html',
-  styleUrl: './essays.scss'
+  styleUrl: './essays.scss',
+  standalone: true,
 })
 export class Essays {
 
