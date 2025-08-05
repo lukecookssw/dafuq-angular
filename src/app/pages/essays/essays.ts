@@ -1,5 +1,6 @@
-import { Component, inject } from '@angular/core';
-import { EssaysService } from '../../services/essays';
+import { Component, inject, OnInit } from '@angular/core';
+import { EssaysService } from '../../services/essays.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-essays',
@@ -7,9 +8,13 @@ import { EssaysService } from '../../services/essays';
   templateUrl: './essays.html',
   styleUrl: './essays.scss',
 })
-export class Essays {
+export class Essays implements OnInit {
 
     private essaysService = inject(EssaysService);
 
-    discussions$ = this.essaysService.getDiscussions();
+    discussions$!: Observable<any>;
+
+    ngOnInit() {
+        this.discussions$ = this.essaysService.getDiscussions();
+    }
 }
