@@ -1,0 +1,29 @@
+<mat-toolbar color="primary" class="navbar">
+  <!-- Logo section -->
+  <div class="logo-section">
+    <a routerLink="/" class="logo-link">
+      <span class="logo-text">LOGO</span>
+    </a>
+  </div>
+
+  <!-- Navigation links -->
+  <nav class="nav-links">
+    <a mat-button routerLink="/essays" routerLinkActive="active-link" class="nav-link">
+      Essays
+    </a>
+    <a mat-button routerLink="/tech" routerLinkActive="active-link" class="nav-link">
+      Tech
+    </a>
+    <a mat-button routerLink="/bio" routerLinkActive="active-link" class="nav-link">
+      Bio
+    </a>
+  </nav>
+
+  <!-- Spacer to push theme toggle to the right -->
+  <span class="spacer"></span>
+
+  <!-- Theme toggle button -->
+  <button mat-icon-button (click)="toggleTheme()" [attr.aria-label]="isDarkTheme() ? 'Switch to light theme' : 'Switch to dark theme'" class="theme-toggle">
+    <mat-icon>{{ isDarkTheme() ? 'light_mode' : 'dark_mode' }}</mat-icon>
+  </button>
+</mat-toolbar>
