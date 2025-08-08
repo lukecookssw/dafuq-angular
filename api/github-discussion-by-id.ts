@@ -26,63 +26,17 @@ module.exports = async function handler(req, res) {
       body: JSON.stringify({
         query: `
           query GetDiscussion($id: ID!) {
-            node(id: $id) {
-              ... on Discussion {
-                id
-                title
-                bodyHTML
-                bodyText
-                url
-                author {
-                  login
-                  avatarUrl
-                }
-                createdAt
-                updatedAt
-                category {
-                  name
-                  slug
-                }
-                comments(first: 50) {
-                  totalCount
-                  nodes {
-                    id
-                    bodyHTML
-                    bodyText
-                    author {
-                      login
-                      avatarUrl
-                    }
-                    createdAt
-                    updatedAt
-                    replies(first: 10) {
-                      totalCount
-                      nodes {
-                        id
-                        bodyHTML
-                        bodyText
-                        author {
-                          login
-                          avatarUrl
-                        }
-                        createdAt
-                        updatedAt
-                      }
-                    }
-                  }
-                }
-                reactions(first: 10) {
-                  totalCount
-                  nodes {
-                    content
-                    user {
-                      login
-                    }
-                  }
-                }
-              }
+          node(id: $id) {
+            ... on Discussion {
+              id
+              title
+              bodyHTML
+              url
+              author { login }
+              createdAt
             }
           }
+        }
         `,
         variables: {
           id: id
