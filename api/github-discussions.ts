@@ -12,7 +12,7 @@ module.exports = async function handler(req, res) {
       query: `
         query {
           repository(owner: "lukecookssw", name: "dafuq-angular") {
-            discussions(first: 10) {
+            discussions(first: 10, orderBy: {field: createdAt, direction: DESC}) {
               nodes {
                 id
                 title
