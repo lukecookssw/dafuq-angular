@@ -1,5 +1,49 @@
 
+.post-content {
+padding: 0.5rem 2rem 0.5rem 2rem; // Adjusted for better spacing between paragraphs
+}
+
+
 .post-content > p {
-    margin-bottom: 1rem; // Adjusted for better spacing between paragraphs
+    padding: 0.25rem;
     width: 100%;
+    font-size: 1rem;;
+}
+
+.post-content > h1,
+.post-content > h2,
+.post-content > h3 {
+    margin-top: 2rem; // Increased top margin for better separation
+    margin-bottom: 1.5rem; // Reduced bottom margin for tighter spacing
+}
+
+.post-content > h1 {
+    font-size: 2rem; // Larger font size for main headings
+    color: var(--mat-sys-primary);
+}
+.post-content > h2 {
+    font-size: 1.75rem; // Slightly smaller than h1
+    color: var(--mat-sys-secondary);
+}
+.post-content > h3 {
+    font-size: 1.5rem; // Smaller than h2
+    color: var(--mat-sys-tertiary);
+}
+
+.post-content > blockquote {
+    margin: 1rem 0; // Adjusted for better spacing
+    padding: 0.5rem 1rem; // Added padding for better readability
+    background-color: var(--mat-sys-surface-container-low); // Consistent with other containers
+    border-left: 4px solid var(--mat-sys-primary); // Emphasized left border
+}
+
+.post-content > ul {
+    margin: 1rem 0; // Adjusted for better spacing
+    padding-left: 2.5rem; // Indentation for list items
+}
+
+.post-content > ul li {
+    margin-bottom: 0.5rem; // Spacing between list items
+    font-size: 1rem; // Consistent font size with paragraphs
+    list-style-type: square;
 }
