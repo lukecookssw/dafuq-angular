@@ -1,0 +1,25 @@
+<app-page-header [title]="'Rants and Ramblings'"></app-page-header>
+
+<div class="my-6">
+  <app-text-quote
+    [quoteText]="
+      'It is a tale told by an idiot, full of sound and fury, signifying nothing.'
+    "
+    [author]="'Willie'"
+  ></app-text-quote>
+</div>
+
+@if(loading) {
+  <app-loading></app-loading>
+}
+
+@if(discussions$ | async; as discussions) { 
+  @for(item of discussions; track item.title) {
+
+    <app-post-blurb [post]="item"></app-post-blurb>
+    <mat-divider></mat-divider>
+  }
+} 
+@else if(!loading) {
+  <p>No posts found.</p>
+}

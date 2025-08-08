@@ -1,11 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, OnInit } from '@angular/core';
 import { catchError, map, Observable, throwError } from 'rxjs';
+import { Discussion } from '../models/discussion.interface';
 
 @Injectable({
   providedIn: 'root'
 })
-export class EssaysService {
+export class GitHubDiscussionsService {
 
   constructor(private http: HttpClient) { }
 
@@ -18,16 +19,16 @@ export class EssaysService {
       })
     );
   }
+
+  getDiscussionById(id: string): Observable<Discussion> {
+    return this.http.get<any>(`/api/github-discussion-by-id?id=${id}`).pipe(
+      map(response => response.data.node),
+      catchError(error => {
+        console.error('Error fetching discussion by ID:', error);
+        return throwError(() => new Error('Failed to fetch discussion by ID'));
+      })
+    );
+  }
 }
 
 
-export interface Discussion {
-  title: string;
-  bodyHtml: string;
-  url: string;
-  author: Author;
-}
-
-export interface Author {
-  login: string;
-}

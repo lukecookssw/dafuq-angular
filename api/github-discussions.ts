@@ -1,6 +1,7 @@
 module.exports = async function handler(req, res) {
+  
   const token = process.env.GITHUB_TOKEN;
-
+  
   const response = await fetch('https://api.github.com/graphql', {
     method: 'POST',
     headers: {
@@ -13,6 +14,7 @@ module.exports = async function handler(req, res) {
           repository(owner: "lukecookssw", name: "dafuq-angular") {
             discussions(first: 10) {
               nodes {
+                id
                 title
                 bodyHTML
                 url
@@ -25,7 +27,6 @@ module.exports = async function handler(req, res) {
       `
     }),
   });
-
   const data = await response.json();
   res.status(200).json(data);
 };

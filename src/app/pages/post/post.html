@@ -1,0 +1,11 @@
+@if(loading) {
+  <app-loading></app-loading>
+}
+
+@if(discussion$ | async; as discussion) {
+    <app-page-header [title]="discussion.title"></app-page-header>
+    <div class="mt-4 post-content w-full" [innerHTML]="discussion.bodyHTML"></div>
+}
+@else if(!loading) {
+  <p>No post found 😢</p>
+}
