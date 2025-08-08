@@ -12,7 +12,6 @@ export class GitHubDiscussionsService {
 
   getDiscussions(): Observable<Discussion[]> {
     return this.http.get<any>('/api/github-discussions').pipe(
-      map(response => response.data.repository.discussions.nodes),
       catchError(error => {
         console.error('Error fetching discussions:', error);
         return throwError(() => new Error('Failed to fetch discussions'));
@@ -22,7 +21,6 @@ export class GitHubDiscussionsService {
 
   getDiscussionById(id: string): Observable<Discussion> {
     return this.http.get<any>(`/api/github-discussion-by-id?id=${id}`).pipe(
-      map(response => response.data.node),
       catchError(error => {
         console.error('Error fetching discussion by ID:', error);
         return throwError(() => new Error('Failed to fetch discussion by ID'));
