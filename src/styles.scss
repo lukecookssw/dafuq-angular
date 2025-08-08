@@ -56,3 +56,25 @@ pre {
   background-color: var(--mat-sys-surface-container-low);
   padding: 1rem;
 }
+
+.text-primary {
+  color: var(--mat-sys-primary);
+}
+.text-secondary {
+  color: var(--mat-sys-secondary);
+}
+.text-tertiary {
+  color: var(--mat-sys-tertiary);
+}
+.text-error {
+  color: var(--mat-sys-error);
+}
+.text-neutral {
+  color: var(--mat-sys-neutral);
+}
+.text-neutral-variant {
+  color: var(--mat-sys-neutral-variant);
+}
+.text-xxs {
+  font-size: 0.6rem; // 12px
+}
