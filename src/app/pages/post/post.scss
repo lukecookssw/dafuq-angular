@@ -17,7 +17,10 @@
 .post-content > p {
     padding: 0.25rem;
     width: 100%;
-    font-size: 1rem;;
+    font-size: 1rem;
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+    line-height: 1.5; // Increased line height for better readability
 }
 
 .post-content > h1,
