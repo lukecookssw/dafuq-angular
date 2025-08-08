@@ -29,7 +29,7 @@ private discussionsService = inject(GitHubDiscussionsService);
 
   getPosts() {
     this.discussions$ = this.discussionsService
-    .getDiscussions_local()
+    .getDiscussions()
     .pipe(tap(() => { this.loading = false }));
   }
 }
