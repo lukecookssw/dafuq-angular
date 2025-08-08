@@ -35,6 +35,6 @@ export class Post implements OnInit {
   getPost() {
     this.discussion$ = this.discussionService
     .getDiscussionById(this.discussionId)
-    .pipe(tap((data) => { console.log(data); this.loading = false }));
+    .pipe(tap(() => { this.loading = false }));
   }
 }
