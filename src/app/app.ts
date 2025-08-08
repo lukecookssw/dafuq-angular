@@ -11,4 +11,8 @@ import { Nav } from './ui/nav/nav';
 export class App {
   protected readonly title = signal('dafuq');
 
+  constructor() {
+    document.body.style.colorScheme = 'dark';
+    document.body.classList.add('dark-theme');
+  }
 }

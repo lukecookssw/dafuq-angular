@@ -23,6 +23,11 @@ html {
     typography: "IBM Plex Sans",
     density: 0,
   ));
+  --header-font-weight: 400; // Light theme: normal weight
+}
+
+body.dark-theme {
+  --header-font-weight: 100; // Dark theme: thin weight
 }
 
 body {
@@ -51,9 +56,12 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 100;
+  font-weight: var(--header-font-weight);
 }
 
+a {
+  text-decoration: underline;
+}
 
 a:hover {
   color: var(--mat-sys-primary);
@@ -87,4 +95,22 @@ pre {
 }
 .text-xxs {
   font-size: 0.6rem; // 12px
+}
+
+blockquote {
+    margin: 1rem 0; // Adjusted for better spacing
+    padding: 0.5rem 1rem; // Added padding for better readability
+    background-color: var(--mat-sys-surface-container-low); // Consistent with other containers
+    border-left: 4px solid var(--mat-sys-primary); // Emphasized left border
+}
+
+ul {
+    margin: 1rem 0; // Adjusted for better spacing
+    padding-left: 2.5rem; // Indentation for list items
+}
+
+ul li {
+    margin-bottom: 0.5rem; // Spacing between list items
+    font-size: 1rem; // Consistent font size with paragraphs
+    list-style-type: square;
 }

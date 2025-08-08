@@ -21,11 +21,15 @@ export class Nav {
 
   toggleTheme() {
     this.isDarkTheme.update(value => !value);
-    // Apply theme to body
+    // Apply theme classes to body
     if (this.isDarkTheme()) {
       document.body.style.colorScheme = 'dark';
+      document.body.classList.add('dark-theme');
+      document.body.classList.remove('light-theme');
     } else {
       document.body.style.colorScheme = 'light';
+      document.body.classList.add('light-theme');
+      document.body.classList.remove('dark-theme');
     }
   }
 }

@@ -43,20 +43,3 @@
     color: var(--mat-sys-tertiary);
 }
 
-.post-content > blockquote {
-    margin: 1rem 0; // Adjusted for better spacing
-    padding: 0.5rem 1rem; // Added padding for better readability
-    background-color: var(--mat-sys-surface-container-low); // Consistent with other containers
-    border-left: 4px solid var(--mat-sys-primary); // Emphasized left border
-}
-
-.post-content > ul {
-    margin: 1rem 0; // Adjusted for better spacing
-    padding-left: 2.5rem; // Indentation for list items
-}
-
-.post-content > ul li {
-    margin-bottom: 0.5rem; // Spacing between list items
-    font-size: 1rem; // Consistent font size with paragraphs
-    list-style-type: square;
-}

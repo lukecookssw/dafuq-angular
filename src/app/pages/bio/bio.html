@@ -1,1 +1,71 @@
-<p>bio works!</p>
+<app-page-header [title]="'Bio'"></app-page-header>
+<div class="my-6">
+  <app-text-quote
+    [quoteText]="
+      'I\'m an educated man, I can do all my sums. I\'ve got my reason and my freedom, my opposable thumbs.'
+    "
+    [author]="'The Snowdroppers'"
+  ></app-text-quote>
+</div>
+
+<div class="mt-4">
+  <h2 class="text-2xl text-tertiary">Current role</h2>
+  <p>
+    VP of Development at
+    <a href="https://ssw.com.au" target="_blank" rel="noopener noreferrer"
+      >SSW</a
+    >. I lead teams of developers, architects, and consultants to deliver
+    high-quality, enterprise software solutions for our clients.
+  </p>
+  <p>
+    These days, I spend most of my time mentoring, coaching, and supporting
+    other developers to help them grow their skills and advance their careers.
+    But there's still a bit of coding in there too, when I can find the time.
+  </p>
+</div>
+
+<div class="mb-8">
+  <h2 class="text-2xl">Background</h2>
+  <p>
+    Over 20 years in software development, starting with ye olde .NET Framework
+    1.1 and glorious WebForms, running on IIS6. Since then, I have worked with a
+    variety of technologies; some of the Clouds, most of the JavaScript
+    frameworks, and all of the .NETs.
+  </p>
+  <p>
+    I've been architecting and leading teams for the last 8 years, and swing
+    between never wanting to write another line of code and being so excited
+    about the latest tech that I can't pull myself away from it.
+  </p>
+  <p>
+    My favourite question is "Why?". You can't figure out what you need to
+    build, until you understand why you need to build it.
+  </p>
+</div>
+
+<div class="mb-8">
+  <mat-divider></mat-divider>
+</div>
+
+<div class="mt-4 flex flex-col gap-8 md:flex-row">
+  <div class="flex-1">
+    <h3 class="text-2xl text-primary">Technical preferences</h3>
+    <ul class="text-primary">
+      <li>Angular</li>
+      <li>Azure</li>
+      <li>C#</li>
+      <li>C</li>
+      <li>Rust</li>
+    </ul>
+  </div>
+  <div class="flex-1">
+    <h3 class="text-2xl text-error">Technical allergies</h3>
+    <ul class="text-error">
+      <li>AWS</li>
+      <li>GCP</li>
+      <li>Mobile apps</li>
+      <li>PHP</li>
+      <li>React</li>
+    </ul>
+  </div>
+</div>
