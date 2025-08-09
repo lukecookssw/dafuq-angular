@@ -11,6 +11,10 @@
 
 html {
   font-size: 24px;
+
+  @media (max-width: 600px) {
+    font-size: 18px;
+  }
   @include mat.theme((
     color: (
       primary: theme-colors.$primary-palette,
