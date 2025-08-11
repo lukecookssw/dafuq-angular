@@ -1,4 +1,10 @@
 <div class="flex flex-col items-center justify-center parent">
-  <h1 class="text-9xl text-primary mb-6">dafuq</h1>
+  <h1 class="text-9xl text-primary mb-6 neon-text" [class.animate-once]="!hasAnimationPlayed" [class.final-glow]="hasAnimationPlayed">
+    @for(letter of titleLetters; track letter.char) {
+    <span class="neon-char" [style.animation-delay.s]="letter.delay">
+      {{ letter.char }}
+    </span>
+    }
+  </h1>
   <h4 class="text-xxs">programming is hard</h4>
 </div>

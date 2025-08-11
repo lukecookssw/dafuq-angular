@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -6,6 +6,27 @@ import { Component } from '@angular/core';
   templateUrl: './home.html',
   styleUrl: './home.scss'
 })
-export class Home {
+export class Home implements OnInit {
+  title = 'dafuq';
+  hasAnimationPlayed = false;
 
+  get titleLetters() {
+    return this.title.split('').map((char, index) => ({
+      char,
+      delay: Math.random() * 2 // Random delay between 0-2 seconds
+    }));
+  }
+
+  ngOnInit(): void {
+    // Check if animation has played before
+    this.hasAnimationPlayed = sessionStorage.getItem('neon-animation-played') === 'true';
+    
+    // If animation is playing for the first time, mark it as played
+    if (!this.hasAnimationPlayed) {
+      // Set a timeout to mark animation as complete after it finishes
+      setTimeout(() => {
+        sessionStorage.setItem('neon-animation-played', 'true');
+      }, 2000); // Adjust timing based on your animation duration
+    }
+  }
 }

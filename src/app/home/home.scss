@@ -2,21 +2,68 @@
     height: calc(100vh - 192px);
 }
 
-
-
-// Stronger glow in dark theme
-:host-context(body.dark-theme) .parent h1 {
-    animation: glow-pulse 5s ease-in-out infinite alternate;
+.neon-text {
+  display: flex;
 }
 
-@keyframes glow-pulse {
-  from {
-    text-shadow: none; // No glow at all
-  }
-  to {
-    text-shadow: 
-      0 0 15px color-mix(in srgb, var(--mat-sys-primary) 60%, transparent),
-      0 0 25px color-mix(in srgb, var(--mat-sys-primary) 60%, transparent),
-      0 0 40px color-mix(in srgb, var(--mat-sys-primary) 60%, transparent);
-  }
+.neon-char {
+  display: inline-block;
+}
+
+// Only animate if it's the first time (animate-once class)
+:host-context(body.dark-theme) .animate-once .neon-char:nth-child(1) { 
+  animation: neon-flicker-1 0.1s linear 0s 8 forwards;
+}
+:host-context(body.dark-theme) .animate-once .neon-char:nth-child(2) { 
+  animation: neon-flicker-2 0.13s linear 0.15s 7 forwards;
+}
+:host-context(body.dark-theme) .animate-once .neon-char:nth-child(3) { 
+  animation: neon-flicker-3 0.17s linear 0.3s 6 forwards;
+}
+:host-context(body.dark-theme) .animate-once .neon-char:nth-child(4) { 
+  animation: neon-flicker-4 0.11s linear 0.08s 10 forwards;
+}
+:host-context(body.dark-theme) .animate-once .neon-char:nth-child(5) { 
+  animation: neon-flicker-5 0.14s linear 0.12s 9 forwards;
+}
+
+// Final glow state for subsequent visits
+:host-context(body.dark-theme) .final-glow .neon-char {
+  opacity: 1;
+  text-shadow: 0 0 15px var(--mat-sys-primary), 0 0 25px color-mix(in srgb, var(--mat-sys-primary) 10%, transparent);
+}
+
+// All your existing keyframe animations stay the same
+@keyframes neon-flicker-1 {
+  0%, 80%, 90% { opacity: 1; text-shadow: 0 0 10px var(--mat-sys-primary), 0 0 20px var(--mat-sys-primary); }
+  85%, 88% { opacity: 0.2; text-shadow: none; }
+  100% { opacity: 1; text-shadow: 0 0 15px var(--mat-sys-primary), 0 0 25px color-mix(in srgb, var(--mat-sys-primary) 10%, transparent); }
+}
+
+@keyframes neon-flicker-2 {
+  0%, 70%, 85% { opacity: 1; text-shadow: 0 0 10px var(--mat-sys-primary), 0 0 20px var(--mat-sys-primary); }
+  75%, 82% { opacity: 0.3; text-shadow: none; }
+  100% { opacity: 1; text-shadow: 0 0 15px var(--mat-sys-primary), 0 0 25px color-mix(in srgb, var(--mat-sys-primary) 10%, transparent); }
+}
+
+@keyframes neon-flicker-3 {
+  0%, 60%, 80% { opacity: 1; text-shadow: 0 0 10px var(--mat-sys-primary), 0 0 20px var(--mat-sys-primary); }
+  65%, 75% { opacity: 0.1; text-shadow: none; }
+  100% { opacity: 1; text-shadow: 0 0 15px var(--mat-sys-primary), 0 0 25px color-mix(in srgb, var(--mat-sys-primary) 10%, transparent); }
+}
+
+@keyframes neon-flicker-4 {
+  0%, 90%, 95% { opacity: 1; text-shadow: 0 0 10px var(--mat-sys-primary), 0 0 20px color-mix(in srgb, var(--mat-sys-primary) 10%, transparent); }
+  92%, 93% { opacity: 0.4; text-shadow: none; }
+  100% { opacity: 1; text-shadow: 0 0 15px var(--mat-sys-primary), 0 0 25px color-mix(in srgb, var(--mat-sys-primary) 10%, transparent); }
+}
+
+@keyframes neon-flicker-5 {
+  0%, 50%, 70% { opacity: 1; text-shadow: 0 0 10px var(--mat-sys-primary), 0 0 20px var(--mat-sys-primary); }
+  55%, 65% { opacity: 0.2; text-shadow: none; }
+  100% { opacity: 1; text-shadow: 0 0 15px var(--mat-sys-primary), 0 0 25px color-mix(in srgb, var(--mat-sys-primary) 10%, transparent); }
+}
+
+:host-context(body.dark-theme) .neon-text {
+  letter-spacing: 0.1em;
 }
