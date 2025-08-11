@@ -10,9 +10,23 @@ mat-icon {
   align-items: center;
   padding: 0 16px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  position: sticky;
+  position: fixed;
   top: 0;
   z-index: 1000;
+
+  // Glassy semi-transparent effect
+  background-color: rgba(255, 255, 255, 0.1); // Semi-transparent white
+  backdrop-filter: blur(10px) saturate(180%); // Glass blur effect
+  -webkit-backdrop-filter: blur(10px) saturate(180%); // Safari support
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2); // Subtle border
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); // Softer shadow
+}
+
+// Dark theme adjustments
+:host-context(body.dark-theme) .navbar {
+  background-color: rgba(0, 0, 0, 0.2); // Semi-transparent black for dark mode
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
 .logo-section {
