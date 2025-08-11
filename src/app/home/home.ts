@@ -12,7 +12,7 @@ export class Home implements OnInit {
   titleLetters: { char: string; delay: number }[] = [];
 
   ngOnInit(): void {
-    // Generate the letters with fixed random delays once
+    // Generate the letters with fixed random delays once 
     this.titleLetters = this.title.split('').map((char, index) => ({
       char,
       delay: Math.random() * 2 // Random delay between 0-2 seconds

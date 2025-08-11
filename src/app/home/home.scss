@@ -66,7 +66,9 @@
 
 :host-context(body.dark-theme) .neon-text {
   letter-spacing: 0.1em;
+  padding-left: 0.05em; // fix centering
 }
 :host-context(body.dark-theme) .parent h4 {
   letter-spacing: 0.1em;
+  text-indent: 0.05em; // fix centering
 }
