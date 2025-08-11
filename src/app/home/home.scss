@@ -64,11 +64,11 @@
   100% { opacity: 1; text-shadow: 0 0 15px var(--mat-sys-primary), 0 0 25px color-mix(in srgb, var(--mat-sys-primary) 10%, transparent); }
 }
 
-:host-context(body.dark-theme) .neon-text {
+.neon-text {
   letter-spacing: 0.1em;
   padding-left: 0.05em; // fix centering
 }
-:host-context(body.dark-theme) .parent h4 {
+.parent h4 {
   letter-spacing: 0.1em;
   text-indent: 0.05em; // fix centering
 }

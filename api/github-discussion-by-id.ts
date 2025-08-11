@@ -10,7 +10,7 @@ module.exports = async function handler(req, res) {
     return res.status(400).json({ error: 'Discussion ID is required' });
   }
 
-  const token = process.env.GITHUB_TOKEN;
+  const token = process.env['GITHUB_TOKEN'];
   
   if (!token) {
     return res.status(500).json({ error: 'GitHub token not configured' });
@@ -64,3 +64,5 @@ module.exports = async function handler(req, res) {
     res.status(500).json({ error: 'Failed to fetch discussion' });
   }
 };
+
+export {};
