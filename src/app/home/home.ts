@@ -9,15 +9,15 @@ import { Component, OnInit } from '@angular/core';
 export class Home implements OnInit {
   title = 'dafuq';
   hasAnimationPlayed = false;
+  titleLetters: { char: string; delay: number }[] = [];
 
-  get titleLetters() {
-    return this.title.split('').map((char, index) => ({
+  ngOnInit(): void {
+    // Generate the letters with fixed random delays once
+    this.titleLetters = this.title.split('').map((char, index) => ({
       char,
       delay: Math.random() * 2 // Random delay between 0-2 seconds
     }));
-  }
 
-  ngOnInit(): void {
     // Check if animation has played before
     this.hasAnimationPlayed = sessionStorage.getItem('neon-animation-played') === 'true';
     
