@@ -75,6 +75,7 @@ a:hover {
 pre {
   color: var(--mat-sys-secondary);
   display: block;
+  text-wrap: wrap;
   width: 100%;
   background-color: var(--mat-sys-surface-container-low);
   padding: 1rem;

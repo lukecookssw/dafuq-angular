@@ -1,6 +1,8 @@
 <a routerLink="/post/{{ post()?.id  }}">
-  <div class="flex flex-row items-center justify-between my-4">
-    <h1 class="text-3xl">{{ post()?.title }}</h1>
-    <h3 class="text-2xl">{{ post()?.createdAt | date : "d MMM, y" }}</h3>
+  <div class="">
+    <h1 class="flex flex-row items-center justify-between my-4 relative text-base md:text-3xl">
+      <span>{{ post()?.title }}</span>
+      <span>{{ post()?.createdAt | date : "d MMM, y" }}</span>
+    </h1>
   </div>
 </a>
