@@ -5,10 +5,11 @@ import { ActivatedRoute } from '@angular/router';
 import { Observable, tap } from 'rxjs';
 import { Loading } from '../../components/loading/loading';
 import { PageHeader } from '../../components/page-header/page-header';
+import { GiscusComponent } from '../../components/giscus/giscus.component';
 
 @Component({
   selector: 'app-post',
-  imports: [CommonModule, Loading, PageHeader],
+  imports: [CommonModule, Loading, PageHeader, GiscusComponent],
   templateUrl: './post.html',
   styleUrl: './post.scss',
   encapsulation: ViewEncapsulation.None // so the styles are applied to the injected HTML
@@ -35,6 +36,6 @@ export class Post implements OnInit {
   getPost() {
     this.discussion$ = this.discussionService
     .getDiscussionById(this.discussionId)
-    .pipe(tap(() => { this.loading = false }));
+    .pipe(tap(() => { this.loading = false; }));
   }
 }

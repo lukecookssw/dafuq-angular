@@ -5,6 +5,7 @@
 @if(discussion$ | async; as discussion) {
     <app-page-header [title]="discussion.title"></app-page-header>
     <div class="mt-4 post-content w-full" [innerHTML]="discussion.bodyHTML"></div>
+    <app-giscus [discussionTitle]="discussion.title"></app-giscus>
 }
 @else if(!loading) {
   <p>No post found 😢</p>

@@ -31,5 +31,12 @@ export class Nav {
       document.body.classList.add('light-theme');
       document.body.classList.remove('dark-theme');
     }
+
+    this.notifyThemeChange();
+  }
+
+  private notifyThemeChange() {
+    // Dispatch a custom event that Giscus components can listen for
+    window.dispatchEvent(new CustomEvent('theme-changed'));
   }
 }
