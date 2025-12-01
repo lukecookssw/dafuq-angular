@@ -49,8 +49,15 @@ body {
 
   // Reset the user agent margin.
   margin: 0;
+
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  
 }
 /* You can add global styles to this file, and also import other style files */
+
+* {
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
 
 html, body { height: 100%; }
 body { 
